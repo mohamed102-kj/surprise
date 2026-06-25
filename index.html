@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أجمل مفاجأة لأغلى الناس ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="splash-screen">
+        <div class="heart-container">
+            <div class="heart">❤️</div>
+            <div class="heart">💖</div>
+            <div class="heart">💝</div>
+        </div>
+        <h1 class="welcome-text">شايلة لك حاجة حلوة جوة.. جاهزة؟ ✨</h1>
+        <button id="start-btn" onclick="startSurprise()">اضغطي هنا لرؤية المفاجأة ❤️</button>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <header>
+            <h1 class="main-title">كل ثانية وأنتِ معايا..🌸</h1>
+        </header>
+        <main>
+            <div class="video-container">
+                <video id="romantic-video" controls loop playsinline>
+                    <source src="myvideo.mp4" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
+            <p class="video-caption">كل لحظة معك هي ذكرى جميلة لا تُنسى... 💕</p>
+        </main>
+    </div>
+
+    <script>
+        function startSurprise() {
+            const splash = document.getElementById('splash-screen');
+            const mainContent = document.getElementById('main-content');
+            const video = document.getElementById('romantic-video');
+            
+            // 1. تشغيل الفيديو بالصوت فوراً أول ما تضغط على الزرار
+            video.play();
+            
+            // 2. إخفاء شاشة القلوب بحركة ناعمة
+            splash.style.opacity = '0';
+            splash.style.transition = 'opacity 0.6s ease';
+            
+            // 3. إظهار صفحة الفيديو
+            setTimeout(() => {
+                splash.style.display = 'none';
+                mainContent.classList.remove('hidden');
+            }, 600);
+        }
+    </script>
+</body>
+</html>
